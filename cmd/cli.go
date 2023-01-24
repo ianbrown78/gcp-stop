@@ -4,15 +4,16 @@ import (
 	"log"
 	"os"
 
-	"github.com/ianbrown78/gcp-stop/config"
-	"github.com/ianbrown78/gcp-stop/gcp"
+	"gcp-stop/config"
+	"gcp-stop/gcp"
+	"github.com/urfave/cli/v2"
 )
 
 func Command() {
 	app := &cli.App{
-		Usage:     "The GCP project cleanup tool with added radiation",
-		Version:   "v0.1.0",
-		UsageText: "e.g. gcp-nuke --project test-nuke-262510 --dryrun",
+		Usage:     "The GCP project shutdown tool",
+		Version:   "v0.0.1",
+		UsageText: "e.g. gcp-stop --project test-stop-123456 --dryrun",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:     "project, p",
@@ -26,17 +27,17 @@ func Command() {
 			&cli.IntFlag{
 				Name:  "timeout, t",
 				Value: 400,
-				Usage: "Timeout for removal of a single resource in seconds",
+				Usage: "Timeout for shutdown of a single resource in seconds",
 			},
 			&cli.IntFlag{
 				Name:  "polltime, p",
 				Value: 10,
-				Usage: "Time for polling resource deletion status in seconds",
+				Usage: "Time for polling resource shutdown status in seconds",
 			},
 		},
 		Action: func(c *cli.Context) error {
 
-			// Behaviour to delete all resource in parallel in one project at a time - will be made into loop / concurrenct project nuke if required
+			// Behaviour to stop all resources in parallel in one project at a time - will be made into loop / concurrenct project stop if required
 			config := config.Config{
 				Project:  c.String("project"),
 				DryRun:   c.Bool("dryrun"),
@@ -47,7 +48,6 @@ func Command() {
 				Regions:  gcp.GetRegions(gcp.Ctx, c.String("project")),
 			}
 			log.Printf("[Info] Timeout %v seconds. Polltime %v seconds. Dry run: %v", config.Timeout, config.PollTime, config.DryRun)
-			gcp.RemoveProject(config)
 
 			return nil
 		},
