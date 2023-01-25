@@ -24,12 +24,12 @@ COMMANDS:
     help, h     Shows a list of commands or help for one command
     
 GLOBAL OPTIONS:
-    --project <string>      GCP project id (required)
-    --dryrun                Perform a dryrun instead
-    --timeout <integer>     Timeout for shutdown of a single resource in seconds. (default: 400)
-    --polltime <integer>    Time for polling resource shutdown status in seconds. (default: 10)
-    --help, -h              Show help
-    --version, -v           Print the version of gcp-stop
+    --project, -p <string>      GCP project id (required)
+    --dryrun, -d                Perform a dryrun instead
+    --timeout, -t <integer>     Timeout for shutdown of a single resource in seconds. (default: 400)
+    --polltime, -o <integer>    Time for polling resource shutdown status in seconds. (default: 10)
+    --help, -h                  Show help
+    --version, -v               Print the version of gcp-stop
 ```
 
 ## Roadmap
