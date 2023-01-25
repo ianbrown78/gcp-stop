@@ -30,7 +30,7 @@ func Command() {
 				Usage: "Timeout for shutdown of a single resource in seconds",
 			},
 			&cli.IntFlag{
-				Name:  "polltime, p",
+				Name:  "polltime, o",
 				Value: 10,
 				Usage: "Time for polling resource shutdown status in seconds",
 			},
