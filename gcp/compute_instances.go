@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"gcp-stop/config"
-	"gcp-stop/helpers"
+	"github.com/ianbrown78/gcp-stop/config"
+	"github.com/ianbrown78/gcp-stop/helpers"
 	"golang.org/x/sync/errgroup"
 	"golang.org/x/sync/syncmap"
 	"google.golang.org/api/compute/v1"

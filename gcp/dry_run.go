@@ -3,7 +3,7 @@ package gcp
 import (
 	"log"
 
-	"gcp-stop/config"
+	"github.com/ianbrown78/gcp-stop/config"
 )
 
 func parallelDryRun(resourceMap map[string]Resource, resource Resource, config config.Config) {

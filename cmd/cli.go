@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
-	"gcp-stop/config"
-	"gcp-stop/gcp"
+	"github.com/ianbrown78/gcp-stop/config"
+	"github.com/ianbrown78/gcp-stop/gcp"
 	"github.com/urfave/cli/v2"
 )
 

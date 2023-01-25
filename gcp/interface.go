@@ -2,11 +2,12 @@ package gcp
 
 import (
 	"context"
-	"gcp-stop/config"
-	"golang.org/x/oauth2/google"
-	"google.golang.org/api/compute/v1"
 	"log"
 	"strings"
+
+	"github.com/ianbrown78/gcp-stop/config"
+	"golang.org/x/oauth2/google"
+	"google.golang.org/api/compute/v1"
 )
 
 // ResourceBase

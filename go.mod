@@ -1,4 +1,4 @@
-module gcp-stop
+module github.com/ianbrown78/gcp-stop
 
 go 1.19
 
