@@ -113,7 +113,7 @@ func (c *SqlInstances) Shutdown() error {
 						instanceID, c.Name(), c.base.config.Project, zone, c.base.config.Timeout)
 				}
 			}
-			// Remove the resource from the list to shutdown.
+			// Remove the resource from the list to shut down.
 			c.resourceMap.Delete(instanceID)
 
 			log.Printf("[Info] Resource shutdown %v [type: %v project: %v zone: %v] (%v seconds)",
